@@ -13,7 +13,7 @@ const Navbar = ({ theme, setTheme }) => {
     <nav className="navbar">
       <div className="navbar-container">
         <Link to="/" className="navbar-brand-wrap">
-          <span className="brand-mark">C</span>
+          {/* <span className="brand-mark">C</span> */}
           <span className="navbar-brand">CollabSphere</span>
         </Link>
 
