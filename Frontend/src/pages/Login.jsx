@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { loginUser } from "../api/authApi";
 import { useAuth } from "../hooks/useAuth";
-import aiScreenshot from "../assets/Screenshot from 2026-04-16 16-22-56.png";
+import AIShowcasePreview from "../components/AIShowcasePreview";
 import "../styles/Auth.css";
 
 const Login = () => {
@@ -120,7 +120,7 @@ const Login = () => {
         </div>
       </div>
       <div className="auth-showcase" ref={showcaseRef}>
-        <img src={aiScreenshot} alt="AI tools preview" />
+        <AIShowcasePreview />
         <div className="auth-showcase-text">
           <h2 className="auth-showcase-subtitle">Special feature</h2>
           <h3>How it works</h3>

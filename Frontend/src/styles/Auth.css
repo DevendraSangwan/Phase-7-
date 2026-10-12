@@ -230,6 +230,128 @@
   animation: showcaseIn 0.6s ease;
 }
 
+.ai-showcase-preview {
+  min-width: 0;
+  padding: 1.5rem;
+  border: 1px solid rgba(203, 213, 225, 0.3);
+  border-radius: 16px;
+  background: #151a28;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+}
+
+.ai-showcase-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.ai-showcase-toolbar h4 {
+  color: #f8fafc;
+  font-size: 1.1rem;
+}
+
+.ai-showcase-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.4rem;
+}
+
+.ai-showcase-actions span {
+  padding: 0.35rem 0.55rem;
+  border: 1px solid rgba(203, 213, 225, 0.45);
+  border-radius: 5px;
+  background: #f8fafc;
+  color: #111827;
+  font-size: 0.65rem;
+  white-space: nowrap;
+}
+
+.ai-showcase-actions span.selected {
+  border-color: #6366f1;
+  background: #6366f1;
+  color: white;
+}
+
+.ai-showcase-language {
+  display: flex;
+  width: fit-content;
+  min-width: 125px;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+  padding: 0.4rem 0.65rem;
+  border: 1px solid rgba(203, 213, 225, 0.35);
+  border-radius: 5px;
+  background: #f8fafc;
+  color: #111827;
+  font-size: 0.85rem;
+}
+
+.ai-showcase-code {
+  display: flex;
+  min-height: 150px;
+  gap: 1rem;
+  overflow: hidden;
+  padding: 0.85rem;
+  border: 1px solid rgba(203, 213, 225, 0.5);
+  border-radius: 5px;
+  background: #f8fafc;
+  color: #334155;
+  font-size: 0.78rem;
+  line-height: 1.6;
+  text-align: left;
+}
+
+.ai-showcase-line-numbers {
+  color: #94a3b8;
+  text-align: right;
+  user-select: none;
+}
+
+.ai-showcase-code code {
+  overflow-wrap: anywhere;
+  font-family: "SFMono-Regular", Consolas, monospace;
+}
+
+.ai-showcase-code .keyword {
+  color: #7c3aed;
+}
+
+.ai-showcase-code .function {
+  color: #2563eb;
+}
+
+.ai-showcase-code .comment {
+  color: #64748b;
+}
+
+.ai-showcase-submit {
+  margin-top: 0.8rem;
+  padding: 0.55rem 0.8rem;
+  border-radius: 5px;
+  background: #4f46e5;
+  color: white;
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .ai-showcase-preview {
+    padding: 1rem;
+  }
+
+  .ai-showcase-toolbar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .ai-showcase-actions {
+    justify-content: flex-start;
+  }
+}
+
 .auth-showcase img {
   width: 100%;
   border-radius: 16px;

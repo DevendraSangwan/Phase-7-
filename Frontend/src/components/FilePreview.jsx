@@ -1,5 +1,12 @@
+import { useState } from "react";
+
 const FilePreview = ({ file, onDelete }) => {
-  const isImage = /\.(png|jpe?g|gif|webp|svg)$/i.test(file.fileUrl || "");
+  const [imagePreviewFailed, setImagePreviewFailed] = useState(false);
+  const imageExtensions = /\.(png|jpe?g|gif|webp|svg)$/i;
+  const fileUrlPath = (file.fileUrl || "").split(/[?#]/, 1)[0];
+  const isImage =
+    imageExtensions.test(file.filename || "") ||
+    imageExtensions.test(fileUrlPath);
   const fileType = (file.filename || "file").split(".").pop()?.toUpperCase() || "FILE";
   const fileSize = typeof file.size === "number"
     ? `${(file.size / 1024 / 1024).toFixed(file.size < 1024 * 1024 ? 1 : 2)} MB`
@@ -8,8 +15,12 @@ const FilePreview = ({ file, onDelete }) => {
   return (
     <div className="file-preview-card">
       <div className="file-preview-thumb">
-        {isImage ? (
-          <img src={file.fileUrl} alt={file.filename} />
+        {isImage && !imagePreviewFailed ? (
+          <img
+            src={file.fileUrl}
+            alt={file.filename}
+            onError={() => setImagePreviewFailed(true)}
+          />
         ) : (
           <div className="file-preview-placeholder">{fileType}</div>
         )}
