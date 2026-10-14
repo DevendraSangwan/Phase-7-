@@ -154,30 +154,6 @@ img {
   background: rgba(99, 102, 241, 0.7);
 }
 
-:root {
-  --primary: #111827;
-  --primary-dark: #1f2937;
-  --secondary: #4b5563;
-  --purple: #374151;
-  --bg: #f3f4f6;
-  --page-bg: #f3f4f6;
-  --panel-bg: #ffffff;
-  --surface-soft: #f9fafb;
-  --input-bg: #ffffff;
-  --text-color: #111827;
-  --heading-color: #111827;
-  --muted: #6b7280;
-  --border-soft: #e5e7eb;
-  --panel-shadow: none;
-  --card-shadow: none;
-  --card-hover-shadow: none;
-}
-
-body {
-  background: var(--page-bg);
-  color: var(--text-color);
-}
-
 .btn,
 .btn-primary,
 .btn-secondary,
@@ -311,3 +287,459 @@ select,
   background: var(--surface-soft);
 }
 
+:root[data-theme] .dashboard-container,
+:root[data-theme] .auth-container,
+:root[data-theme] .not-found,
+:root[data-theme] .project-page {
+  background:
+    radial-gradient(900px circle at 5% 0, rgba(99, 102, 241, 0.09), transparent 42%),
+    var(--page-bg);
+}
+
+:root[data-theme] .dashboard-title,
+:root[data-theme] .dashboard-section-title,
+:root[data-theme] .auth-title,
+:root[data-theme] .auth-subtitle,
+:root[data-theme] .auth-panel-card h3,
+:root[data-theme] .auth-panel-card h4,
+:root[data-theme] .auth-panel-card p,
+:root[data-theme] .auth-panel-card ul,
+:root[data-theme] .auth-link,
+:root[data-theme] .not-found-title,
+:root[data-theme] .not-found-message,
+:root[data-theme] .project-info h1,
+:root[data-theme] .project-info p,
+:root[data-theme] .project-owner,
+:root[data-theme] .tab,
+:root[data-theme] .tab-active,
+:root[data-theme] .overview-tab h2,
+:root[data-theme] .code-header,
+:root[data-theme] .code-subtitle,
+:root[data-theme] .code-meta,
+:root[data-theme] .notes-header,
+:root[data-theme] .files-header,
+:root[data-theme] .members-header,
+:root[data-theme] .ai-header,
+:root[data-theme] .note-content,
+:root[data-theme] .note-meta,
+:root[data-theme] .member-name,
+:root[data-theme] .ai-result h3,
+:root[data-theme] .result-content,
+:root[data-theme] .project-tab,
+:root[data-theme] .project-card-title,
+:root[data-theme] .project-card-description,
+:root[data-theme] .project-card-meta,
+:root[data-theme] .stat-label,
+:root[data-theme] .about-text,
+:root[data-theme] .tip-item,
+:root[data-theme] .footer-tagline,
+:root[data-theme] .footer-tips h4,
+:root[data-theme] .footer-tips ul,
+:root[data-theme] .footer-logo,
+:root[data-theme] .footer-bottom,
+:root[data-theme] .file-preview-name,
+:root[data-theme] .file-preview-size,
+:root[data-theme] .file-upload-text,
+:root[data-theme] .file-upload-hint,
+:root[data-theme] .markdown-editor-title,
+:root[data-theme] .markdown-preview,
+:root[data-theme] .markdown-preview h1,
+:root[data-theme] .markdown-preview h2,
+:root[data-theme] .markdown-preview h3,
+:root[data-theme] .markdown-preview blockquote {
+  color: var(--text-color);
+}
+
+:root[data-theme] .dashboard-subtitle,
+:root[data-theme] .dashboard-empty,
+:root[data-theme] .modal-subtitle,
+:root[data-theme] .stat-label,
+:root[data-theme] .file-preview-size,
+:root[data-theme] .file-upload-hint {
+  color: var(--muted);
+}
+
+:root[data-theme] .dashboard-section,
+:root[data-theme] .stat-card,
+:root[data-theme] .about-card,
+:root[data-theme] .modal-card,
+:root[data-theme] .auth-card,
+:root[data-theme] .auth-panel-card,
+:root[data-theme] .project-header,
+:root[data-theme] .project-tabs,
+:root[data-theme] .project-content,
+:root[data-theme] .stat-item,
+:root[data-theme] .notes-tab,
+:root[data-theme] .files-tab,
+:root[data-theme] .members-tab,
+:root[data-theme] .ai-tab,
+:root[data-theme] .code-tab,
+:root[data-theme] .overview-tab,
+:root[data-theme] .note-item,
+:root[data-theme] .member-item,
+:root[data-theme] .ai-result,
+:root[data-theme] .code-snippet-card,
+:root[data-theme] .project-card,
+:root[data-theme] .file-preview,
+:root[data-theme] .file-preview-card,
+:root[data-theme] .markdown-editor-container,
+:root[data-theme] .markdown-preview {
+  background: var(--panel-bg);
+  border-color: var(--border-soft);
+  color: var(--text-color);
+  box-shadow: var(--panel-shadow);
+}
+
+:root[data-theme] .projects-grid {
+  background: var(--surface-soft);
+  box-shadow: var(--panel-shadow);
+}
+
+:root[data-theme] .projects-grid .project-card {
+  background: var(--panel-bg);
+  border-color: var(--border-soft);
+}
+
+:root[data-theme] .projects-grid .project-card-title,
+:root[data-theme] .projects-grid .project-card-description,
+:root[data-theme] .projects-grid .project-card-meta {
+  color: var(--text-color);
+}
+
+:root[data-theme] .tip-item,
+:root[data-theme] .project-tabs,
+:root[data-theme] .project-tab:hover,
+:root[data-theme] .markdown-editor-header,
+:root[data-theme] .markdown-editor .w-md-editor-toolbar,
+:root[data-theme] .markdown-editor .w-md-editor-content,
+:root[data-theme] .markdown-editor .w-md-editor-preview,
+:root[data-theme] .markdown-preview pre,
+:root[data-theme] .markdown-preview code,
+:root[data-theme] .markdown-preview table th,
+:root[data-theme] .code-title-input,
+:root[data-theme] .code-textarea,
+:root[data-theme] .code-snippet-card,
+:root[data-theme] .ai-result,
+:root[data-theme] .member-item {
+  background-color: var(--surface-soft);
+}
+
+:root[data-theme] .project-search,
+:root[data-theme] .auth-input,
+:root[data-theme] .input,
+:root[data-theme] .modal-input,
+:root[data-theme] .modal-textarea,
+:root[data-theme] .code-title-input,
+:root[data-theme] .code-textarea,
+:root[data-theme] .member-input,
+:root[data-theme] .language-select,
+:root[data-theme] .ai-code-input,
+:root[data-theme] .edit-title-input,
+:root[data-theme] .edit-description-input,
+:root[data-theme] .markdown-editor-container {
+  background-color: var(--input-bg);
+  border-color: var(--border-soft);
+  color: var(--text-color);
+}
+
+:root[data-theme] .app-footer {
+  background: linear-gradient(135deg, var(--surface-soft), var(--page-bg));
+  border-color: var(--border-soft);
+}
+
+:root[data-theme] .footer-tips li,
+:root[data-theme] .project-card-actions,
+:root[data-theme] .markdown-editor-header,
+:root[data-theme] .markdown-preview table th,
+:root[data-theme] .markdown-preview table td {
+  border-color: var(--border-soft);
+}
+
+:root[data-theme] .files-tab .file-upload-dropzone {
+  background: var(--surface-soft);
+  border-color: var(--border-soft);
+  color: var(--text-color);
+}
+
+:root[data-theme] .files-tab .file-upload-text,
+:root[data-theme] .files-tab .file-preview-placeholder,
+:root[data-theme] .files-tab .file-preview-body h4,
+:root[data-theme] .files-tab .files-header h2 {
+  color: var(--heading-color);
+}
+
+:root[data-theme] .files-tab .file-upload-hint,
+:root[data-theme] .files-tab .file-preview-body p,
+:root[data-theme] .files-tab .file-preview-size {
+  color: var(--muted);
+}
+
+:root[data-theme] .files-tab .file-preview-card,
+:root[data-theme] .files-tab .file-preview-thumb {
+  background: var(--surface-soft);
+  border-color: var(--border-soft);
+}
+
+:root[data-theme] .files-tab .empty-state {
+  background: var(--surface-soft);
+  border-color: var(--border-soft);
+  color: var(--muted);
+}
+
+:root[data-theme] .project-tabs .tab,
+:root[data-theme] .project-tab {
+  color: var(--text-color);
+}
+
+:root[data-theme] .project-tabs .tab:hover {
+  color: var(--heading-color);
+}
+
+:root[data-theme] .code-snippet-header h4,
+:root[data-theme] .ai-result h3,
+:root[data-theme] .about-card h3,
+:root[data-theme] .about-card h4,
+:root[data-theme] .auth-panel-stats .stat,
+:root[data-theme] .stat-value {
+  color: var(--heading-color);
+}
+
+:root[data-theme] .auth-panel-stats .label {
+  color: var(--muted);
+}
+
+:root[data-theme] .footer-logo {
+  color: var(--primary);
+}
+
+:root[data-theme] .project-tab:hover {
+  background-color: var(--surface-soft);
+}
+
+:root[data-theme] .markdown-preview table th,
+:root[data-theme] .markdown-preview table td,
+:root[data-theme] .markdown-editor-header {
+  border-color: var(--border-soft);
+}
+
+:root[data-theme] .btn-primary,
+:root[data-theme] .btn-small.btn-primary,
+:root[data-theme] .dashboard-button,
+:root[data-theme] .auth-button,
+:root[data-theme] .project-card-button.primary,
+:root[data-theme] .not-found-button,
+:root[data-theme] .project-actions .btn-edit,
+:root[data-theme] .mode-active {
+  border: 1px solid rgba(199, 210, 254, 0.28);
+  background: linear-gradient(135deg, #6366f1 0%, #0891b2 100%);
+  color: #fff;
+  box-shadow: 0 8px 20px rgba(79, 70, 229, 0.28);
+}
+
+:root[data-theme] .btn-primary:hover,
+:root[data-theme] .btn-small.btn-primary:hover,
+:root[data-theme] .dashboard-button:hover,
+:root[data-theme] .auth-button:hover,
+:root[data-theme] .project-card-button.primary:hover,
+:root[data-theme] .not-found-button:hover,
+:root[data-theme] .project-actions .btn-edit:hover,
+:root[data-theme] .mode-active:hover {
+  background: linear-gradient(135deg, #818cf8 0%, #06b6d4 100%);
+  box-shadow: 0 10px 26px rgba(99, 102, 241, 0.38);
+}
+
+:root[data-theme] .btn-secondary,
+:root[data-theme] .btn-small.btn-secondary,
+:root[data-theme] .project-card-button.secondary,
+:root[data-theme] .mode-btn {
+  border: 1px solid rgba(148, 163, 184, 0.28);
+  background: rgba(51, 65, 85, 0.78);
+  color: #e2e8f0;
+}
+
+:root[data-theme] .btn-secondary:hover,
+:root[data-theme] .btn-small.btn-secondary:hover,
+:root[data-theme] .project-card-button.secondary:hover,
+:root[data-theme] .mode-btn:hover {
+  border-color: rgba(165, 180, 252, 0.6);
+  background: rgba(71, 85, 105, 0.95);
+  color: #fff;
+}
+
+:root[data-theme] .btn-danger,
+:root[data-theme] .btn-small.btn-danger,
+:root[data-theme] .project-actions .btn-danger,
+:root[data-theme] .project-card-button.danger {
+  border: 1px solid rgba(248, 113, 113, 0.35);
+  background: rgba(127, 29, 29, 0.72);
+  color: #fecaca;
+  box-shadow: 0 6px 16px rgba(127, 29, 29, 0.2);
+}
+
+:root[data-theme] .btn-danger:hover,
+:root[data-theme] .btn-small.btn-danger:hover,
+:root[data-theme] .project-actions .btn-danger:hover,
+:root[data-theme] .project-card-button.danger:hover {
+  border-color: rgba(252, 165, 165, 0.6);
+  background: rgba(153, 27, 27, 0.9);
+  color: #fff;
+}
+
+:root[data-theme] .navbar-logout {
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  background: rgba(15, 23, 42, 0.3);
+}
+
+:root[data-theme] .navbar-logout:hover {
+  background: rgba(15, 23, 42, 0.52);
+}
+
+:root[data-theme] .file-preview-button,
+:root[data-theme] .files-tab .file-preview-actions .file-link,
+:root[data-theme] .files-tab .file-preview-actions .file-action-btn {
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: background 0.18s ease, border-color 0.18s ease, color 0.18s ease, transform 0.18s ease;
+}
+
+:root[data-theme] .file-preview-button:hover,
+:root[data-theme] .files-tab .file-preview-actions .file-link:hover,
+:root[data-theme] .files-tab .file-preview-actions .file-action-btn:hover {
+  transform: translateY(-1px);
+}
+
+:root[data-theme="light"] .btn-secondary,
+:root[data-theme="light"] .btn-small.btn-secondary,
+:root[data-theme="light"] .project-card-button.secondary,
+:root[data-theme="light"] .mode-btn {
+  border-color: #dbe2f0;
+  background: #fff;
+  color: #334155;
+  box-shadow: 0 3px 10px rgba(15, 23, 42, 0.06);
+}
+
+:root[data-theme="light"] .btn-secondary:hover,
+:root[data-theme="light"] .btn-small.btn-secondary:hover,
+:root[data-theme="light"] .project-card-button.secondary:hover,
+:root[data-theme="light"] .mode-btn:hover {
+  border-color: #a5b4fc;
+  background: #eef2ff;
+  color: #3730a3;
+}
+
+:root[data-theme="light"] .btn-danger,
+:root[data-theme="light"] .btn-small.btn-danger,
+:root[data-theme="light"] .project-actions .btn-danger,
+:root[data-theme="light"] .project-card-button.danger {
+  border-color: #fecaca;
+  background: #fff1f2;
+  color: #be123c;
+  box-shadow: 0 3px 10px rgba(190, 18, 60, 0.08);
+}
+
+:root[data-theme="light"] .btn-danger:hover,
+:root[data-theme="light"] .btn-small.btn-danger:hover,
+:root[data-theme="light"] .project-actions .btn-danger:hover,
+:root[data-theme="light"] .project-card-button.danger:hover {
+  border-color: #fda4af;
+  background: #ffe4e6;
+  color: #9f1239;
+}
+
+:root[data-theme="light"] .navbar-logout {
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: rgba(15, 23, 42, 0.16);
+  color: #fff;
+}
+
+:root[data-theme="light"] .files-tab .file-preview-actions .file-link,
+:root[data-theme="light"] .file-preview-button.view {
+  border-color: #bfdbfe;
+  background: #eff6ff;
+  color: #1d4ed8;
+}
+
+:root[data-theme="light"] .file-preview-button.download {
+  border-color: #bbf7d0;
+  background: #f0fdf4;
+  color: #15803d;
+}
+
+:root[data-theme="light"] .files-tab .file-action-btn.download {
+  border-color: #bbf7d0;
+  background: #14532d;
+  color: #f0fdf4;
+}
+
+:root[data-theme="light"] .file-preview-button.delete,
+:root[data-theme="light"] .files-tab .file-action-btn.delete {
+  border-color: #fecaca;
+  background: #fff1f2;
+  color: #be123c;
+}
+
+:root[data-theme="dark"] .btn-secondary,
+:root[data-theme="dark"] .btn-small.btn-secondary,
+:root[data-theme="dark"] .project-card-button.secondary,
+:root[data-theme="dark"] .mode-btn {
+  border-color: rgba(148, 163, 184, 0.28);
+  background: rgba(51, 65, 85, 0.78);
+  color: #e2e8f0;
+  box-shadow: 0 3px 10px rgba(2, 6, 23, 0.16);
+}
+
+:root[data-theme="dark"] .btn-secondary:hover,
+:root[data-theme="dark"] .btn-small.btn-secondary:hover,
+:root[data-theme="dark"] .project-card-button.secondary:hover,
+:root[data-theme="dark"] .mode-btn:hover {
+  border-color: rgba(165, 180, 252, 0.6);
+  background: rgba(71, 85, 105, 0.95);
+  color: #fff;
+}
+
+:root[data-theme="dark"] .btn-danger,
+:root[data-theme="dark"] .btn-small.btn-danger,
+:root[data-theme="dark"] .project-actions .btn-danger,
+:root[data-theme="dark"] .project-card-button.danger {
+  border-color: rgba(248, 113, 113, 0.35);
+  background: rgba(127, 29, 29, 0.72);
+  color: #fecaca;
+  box-shadow: 0 6px 16px rgba(127, 29, 29, 0.2);
+}
+
+:root[data-theme="dark"] .btn-danger:hover,
+:root[data-theme="dark"] .btn-small.btn-danger:hover,
+:root[data-theme="dark"] .project-actions .btn-danger:hover,
+:root[data-theme="dark"] .project-card-button.danger:hover {
+  border-color: rgba(252, 165, 165, 0.6);
+  background: rgba(153, 27, 27, 0.9);
+  color: #fff;
+}
+
+:root[data-theme="dark"] .navbar-logout {
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  background: rgba(15, 23, 42, 0.3);
+  color: #fff;
+}
+
+:root[data-theme="dark"] .files-tab .file-preview-actions .file-link,
+:root[data-theme="dark"] .file-preview-button.view {
+  border-color: rgba(96, 165, 250, 0.35);
+  background: rgba(30, 64, 175, 0.42);
+  color: #bfdbfe;
+}
+
+:root[data-theme="dark"] .file-preview-button.download,
+:root[data-theme="dark"] .files-tab .file-action-btn.download {
+  border-color: rgba(74, 222, 128, 0.3);
+  background: rgba(22, 101, 52, 0.42);
+  color: #bbf7d0;
+}
+
+:root[data-theme="dark"] .file-preview-button.delete,
+:root[data-theme="dark"] .files-tab .file-action-btn.delete {
+  border-color: rgba(248, 113, 113, 0.35);
+  background: rgba(153, 27, 27, 0.42);
+  color: #fecaca;
+}

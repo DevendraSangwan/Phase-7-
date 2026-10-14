@@ -5,7 +5,11 @@ const errorHandler = require("./middleware/errorMiddleware");
 const app = express();
 
 app.use(cors({
-  origin: 'https://venerable-semolina-c405b0.netlify.app',
+  origin: [
+    'https://venerable-semolina-c405b0.netlify.app',
+    'http://localhost:5173',
+    'http://127.0.0.1:5173',
+  ],
   credentials: true
 }));
 app.use(express.json());

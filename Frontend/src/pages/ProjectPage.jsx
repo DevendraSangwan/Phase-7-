@@ -19,7 +19,7 @@ import MarkdownEditor from "../components/MarkdownEditor";
 import FilePreview from "../components/FilePreview";
 import "../styles/ProjectPage.css";
 
-const ProjectPage = () => {
+const ProjectPage = ({ theme }) => {
   const { id } = useParams();
   const navigate = useNavigate();
   const { user } = useAuth();
@@ -526,6 +526,7 @@ const ProjectPage = () => {
             </div>
             <div className="note-editor">
               <MarkdownEditor
+                theme={theme}
                 value={noteContent}
                 onChange={setNoteContent}
                 placeholder="Write your note in markdown..."

@@ -38,7 +38,7 @@ function App() {
           path="/project/:id"
           element={
             <ProtectedRoute>
-              <ProjectPage />
+              <ProjectPage theme={theme} />
             </ProtectedRoute>
           }
         />

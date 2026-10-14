@@ -1,5 +1,5 @@
 .navbar {
-  background: linear-gradient(135deg, #4f46e5 0%, #06b6d4 100%);
+  background: linear-gradient(135deg, #4338ca 0%, #0891b2 100%);
   padding: 1rem 2rem;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
@@ -65,4 +65,48 @@
 
 .navbar-logout:hover {
   background-color: rgba(255, 255, 255, 0.3);
+}
+
+.theme-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.55rem 0.9rem;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.16);
+  color: white;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.theme-toggle-btn:hover {
+  background: rgba(15, 23, 42, 0.3);
+}
+
+.theme-toggle-btn:focus-visible {
+  outline-color: white;
+}
+
+@media (max-width: 640px) {
+  .navbar {
+    padding: 0.85rem 1rem;
+  }
+
+  .navbar-container {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .navbar-links {
+    width: 100%;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .navbar-link {
+    padding: 0.45rem 0.65rem;
+  }
 }

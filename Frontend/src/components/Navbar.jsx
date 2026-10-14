@@ -39,7 +39,14 @@ const Navbar = ({ theme, setTheme }) => {
             </>
           )}
 
-          <button type="button" className="theme-toggle-btn" onClick={toggleTheme}>
+          <button
+            type="button"
+            className="theme-toggle-btn"
+            onClick={toggleTheme}
+            aria-label={`Switch to ${theme === "light" ? "dark" : "light"} mode`}
+            aria-pressed={theme === "dark"}
+          >
+            <span aria-hidden="true">{theme === "light" ? "☾" : "☀"}</span>
             {theme === "light" ? "Dark mode" : "Light mode"}
           </button>
         </div>
