@@ -5,7 +5,7 @@ const errorHandler = require("./middleware/errorMiddleware");
 const app = express();
 
 app.use(cors({
-  origin: 'https://aapki-site.netlify.app',
+  origin: 'https://venerable-semolina-c405b0.netlify.app',
   credentials: true
 }));
 app.use(express.json());
