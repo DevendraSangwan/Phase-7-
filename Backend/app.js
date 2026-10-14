@@ -20,14 +20,8 @@ app.use("/api/admin", require("./routes/adminRoutes"));
 app.use(errorHandler);
 const path = require('path');
 
-const distPath = path.join(__dirname, '../Frontend/dist');
-app.use(express.static(distPath));
-
-app.use((req, res, next) => {
-  if (req.method === 'GET' && !req.path.startsWith('/api')) {
-    return res.sendFile(path.join(distPath, 'index.html'));
-  }
-  next();
+app.get('/', (req, res) => {
+  res.send('CollabSphere API is running');
 });
 
 module.exports = app;
