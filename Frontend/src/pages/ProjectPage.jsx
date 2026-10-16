@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { useAuth } from "../hooks/useAuth";
 import {
@@ -60,10 +60,6 @@ const ProjectPage = ({ theme }) => {
   const aiModeRef = useRef(null);
 
   useEffect(() => {
-    fetchProject();
-  }, [id]);
-
-  useEffect(() => {
     const storageKey = `collabphere_project_code_${id}`;
     const saved = localStorage.getItem(storageKey);
     if (saved !== null) {
@@ -82,14 +78,6 @@ const ProjectPage = ({ theme }) => {
     setCodeTitle("");
     setCodeSnippet("");
   }, [id]);
-
-  useEffect(() => {
-    if (activeTab === "notes" && project) {
-      fetchNotes();
-    } else if (activeTab === "files" && project) {
-      fetchFiles();
-    }
-  }, [activeTab, project]);
 
   useEffect(() => {
     const target = aiModeRef.current;
@@ -112,7 +100,7 @@ const ProjectPage = ({ theme }) => {
     return () => observer.disconnect();
   }, [activeTab]);
 
-  const fetchProject = async () => {
+  const fetchProject = useCallback(async () => {
     try {
       const response = await getProjectById(id);
       setProject(response.data);
@@ -139,25 +127,37 @@ const ProjectPage = ({ theme }) => {
     } finally {
       setLoading(false);
     }
-  };
+  }, [id, navigate]);
 
-  const fetchNotes = async () => {
+  const fetchNotes = useCallback(async () => {
     try {
       const response = await getNotes(id);
       setNotes(response.data);
     } catch (error) {
       console.error("Error fetching notes:", error);
     }
-  };
+  }, [id]);
 
-  const fetchFiles = async () => {
+  const fetchFiles = useCallback(async () => {
     try {
       const response = await getFiles(id);
       setFiles(response.data);
     } catch (error) {
       console.error("Error fetching files:", error);
     }
-  };
+  }, [id]);
+
+  useEffect(() => {
+    fetchProject();
+  }, [fetchProject]);
+
+  useEffect(() => {
+    if (activeTab === "notes" && project) {
+      fetchNotes();
+    } else if (activeTab === "files" && project) {
+      fetchFiles();
+    }
+  }, [activeTab, project, fetchNotes, fetchFiles]);
 
   const handleUpdateProject = async () => {
     try {

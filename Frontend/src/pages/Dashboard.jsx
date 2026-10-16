@@ -1,5 +1,5 @@
 import { useAuth } from "../hooks/useAuth";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import { getProjects, createProject } from "../api/projectApi";
 import { getNotes } from "../api/noteApi";
@@ -19,11 +19,7 @@ const Dashboard = () => {
   const [showProjectModal, setShowProjectModal] = useState(false);
   const [newProject, setNewProject] = useState({ title: "", description: "" });
 
-  useEffect(() => {
-    fetchProjects();
-  }, []);
-
-  const fetchProjects = async () => {
+  const fetchProjects = useCallback(async () => {
     try {
       const response = await getProjects();
       setProjects(response.data);
@@ -33,9 +29,9 @@ const Dashboard = () => {
     } finally {
       setLoading(false);
     }
-  };
+  }, [fetchProjectCounts]);
 
-  const fetchProjectCounts = async (projectList) => {
+  const fetchProjectCounts = useCallback(async (projectList) => {
     if (!projectList?.length) {
       setProjectCounts({});
       setTotalFiles(0);
@@ -71,7 +67,11 @@ const Dashboard = () => {
     setProjectCounts(countMap);
     setTotalNotes(results.reduce((sum, item) => sum + item.notes, 0));
     setTotalFiles(results.reduce((sum, item) => sum + item.files, 0));
-  };
+  }, []);
+
+  useEffect(() => {
+    fetchProjects();
+  }, [fetchProjects]);
 
   const handleNewProject = async () => {
     try {
