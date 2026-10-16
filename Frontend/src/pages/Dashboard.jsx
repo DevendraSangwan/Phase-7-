@@ -19,18 +19,6 @@ const Dashboard = () => {
   const [showProjectModal, setShowProjectModal] = useState(false);
   const [newProject, setNewProject] = useState({ title: "", description: "" });
 
-  const fetchProjects = useCallback(async () => {
-    try {
-      const response = await getProjects();
-      setProjects(response.data);
-      await fetchProjectCounts(response.data);
-    } catch (error) {
-      console.error("Error fetching projects:", error);
-    } finally {
-      setLoading(false);
-    }
-  }, [fetchProjectCounts]);
-
   const fetchProjectCounts = useCallback(async (projectList) => {
     if (!projectList?.length) {
       setProjectCounts({});
@@ -68,6 +56,18 @@ const Dashboard = () => {
     setTotalNotes(results.reduce((sum, item) => sum + item.notes, 0));
     setTotalFiles(results.reduce((sum, item) => sum + item.files, 0));
   }, []);
+
+  const fetchProjects = useCallback(async () => {
+    try {
+      const response = await getProjects();
+      setProjects(response.data);
+      await fetchProjectCounts(response.data);
+    } catch (error) {
+      console.error("Error fetching projects:", error);
+    } finally {
+      setLoading(false);
+    }
+  }, [fetchProjectCounts]);
 
   useEffect(() => {
     fetchProjects();
