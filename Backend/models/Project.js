@@ -6,7 +6,7 @@ const projectSchema = mongoose.Schema(
     description: String,
     owner: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
     members: [{ type: mongoose.Schema.Types.ObjectId, ref: "User" }],
-    isPublic: { type: Boolean, default: false },
+    isPublic: { type: Boolean, default: true },
   },
   { timestamps: true }
 );

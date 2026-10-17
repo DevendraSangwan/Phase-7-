@@ -13,7 +13,7 @@ const hasCloudinaryConfig =
   cloudinaryConfig.api_secret;
 
 if (!hasCloudinaryConfig) {
-  console.warn(
+  console.log(
     "Cloudinary is not configured. Please add CLOUDINARY_CLOUD_NAME, CLOUDINARY_API_KEY and CLOUDINARY_API_SECRET in the backend .env file."
   );
 }

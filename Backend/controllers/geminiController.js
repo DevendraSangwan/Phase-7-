@@ -13,7 +13,7 @@ exports.explainCode = asyncHandler(async (req, res) => {
   }
 
   try {
-    console.log("Generating explanation for:", code);
+    // console.log("Generating explanation for:", code);
     const result = await model.generateContent(
       `You are an expert code explainer. Explain the following code in detail, including what it does, how it works, and any important patterns or best practices used:\n\n${code}`
     );
@@ -41,7 +41,7 @@ exports.generateDocumentation = asyncHandler(async (req, res) => {
   }
 
   try {
-    console.log("Generating documentation for:", code);
+    // console.log("Generating documentation for:", code);
     const result = await model.generateContent(
       `Generate comprehensive documentation for the following ${language || "code"}. Include function/class descriptions, parameter explanations, return values, and usage examples:\n\n${code}`
     );
@@ -78,11 +78,11 @@ Features: ${features || "Not specified"}
 
 Include sections for: Title, Description, Features, Technologies Used, Installation, Usage, Contributing, and License.`;
 
-    console.log("Generating README for project:", projectName);
+    // console.log("Generating README for project:", projectName);
     const result = await model.generateContent(prompt);
     const response = await result.response;
     const text = response.text();
-    console.log("Generated README");
+    // console.log("Generated README");
     res.json({ readme: text });
   } catch (error) {
     console.error("Gemini API Error:", error);
@@ -110,7 +110,7 @@ exports.generateCode = asyncHandler(async (req, res) => {
 
     const response = await result.response;
     const text = response.text();
-    console.log("Generated code");
+    // console.log("Generated code");
     res.json({ code: text });
   } catch (error) {
     console.error("Gemini API Error:", error);
