@@ -529,7 +529,7 @@ const ProjectPage = ({ theme }) => {
                 theme={theme}
                 value={noteContent}
                 onChange={setNoteContent}
-                placeholder="Write your note in markdown..."
+                placeholder="Write your note here..."
               />
               <button
                 onClick={
